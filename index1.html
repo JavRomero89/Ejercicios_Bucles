@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tienda Online de Productos Chinos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    main {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .product {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 10px;
+      width: calc(33.33% - 20px);
+    }
+
+    .cart {
+      flex: 0 0 25%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .cart h2 {
+      margin-top: 0;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .company-info,
+    .contact-form {
+      width: 40%;
+    }
+
+    .company-info h3,
+    .contact-form h3 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tienda Online de Productos Chinos en Oferta</h1>
+  </header>
+
+  <main>
+    <div class="product-grid">
+      <!-- A continuación, muestra los 15 productos en cuadrícula -->
+      <div class="product">
+        <h3>Producto 1</h3>
+        <p>Precio: $10</p>
+        <button onclick="addToCart('Producto 1', 10)">Añadir al carrito</button>
+      </div>
+      <!-- Agrega aquí los otros 14 productos -->
+    </div>
+
+    <div class="cart">
+      <h2>Carrito de Compras</h2>
+      <ul id="cart-items"></ul>
+      <button onclick="checkout()">Realizar compra</button>
+    </div>
+  </main>
+
+  <footer>
+    <div class="company-info">
+      <h3>Datos de la Empresa</h3>
+      <!-- Agrega aquí los datos de tu empresa -->
+    </div>
+    <div class="contact-form">
+      <h3>Formulario de Contacto</h3>
+      <!-- Agrega aquí el formulario de contacto -->
+    </div>
+  </footer>
+
+  <script>
+    // Función para añadir un producto al carrito
+    function addToCart(producto, precio) {
+      var cartItems = document.getElementById('cart-items');
+      var li = document.createElement('li');
+      li.innerHTML = producto + ' - $' + precio;
+      cartItems.appendChild(li);
+    }
+
+    // Función para realizar la compra
+    function checkout() {
+      var cartItems = document.getElementById('cart-items');
+      while (cartItems.firstChild) {
+        cartItems.removeChild(cartItems.firstChild);
+      }
+      alert('¡Gracias por tu compra!');
+    }
+  </script>
+</body>
+</html
